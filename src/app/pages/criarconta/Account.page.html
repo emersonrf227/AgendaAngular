@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="card o-hidden border-0 shadow-lg my-3">
+		<div class="card-body p-9">
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="p-6">
+						<div class="text-center">
+							<h1 class="h4 text-gray-900 mb-4">Criar nova conta!</h1>
+						</div>
+						<form [formGroup]="accountForm">
+							<div class="form-group">
+								<input type="email" class="form-control form-control-user" formControlName="email"
+									id="exampleInputEmail" placeholder="E-mail">
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-6 mb-3 mb-sm-0">
+									<input type="password" class="form-control form-control-user"
+										formControlName="password" id="exampleInputPassword" placeholder="Senha">
+								</div>
+								<div class="col-sm-6">
+									<input type="password" class="form-control form-control-user"
+										formControlName="repeat" id="exampleRepeatPassword"
+										placeholder="confirmar Senha">
+								</div>
+							</div>
+							<div class="text-center">
+								<label class="error">{{errorMessage}}</label>
+							</div>
+							<button type="button" class="btn btn-primary btn-block"
+								(click)="tryCreateAccount(accountForm.value)">Cadastar <i class="fa fa-check" aria-hidden="true"></i></button>
+							<hr>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
