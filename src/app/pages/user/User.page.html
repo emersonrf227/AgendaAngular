@@ -1,0 +1,56 @@
+<div>
+    <br>
+    <legend>Registrar novo Ramal</legend>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="cpfHelp">Nome</label>
+                <input type="text" class="form-control" id="nameHelp" aria-describedby="nameHelp" name="nome" placeholder="Nome" formControlName="nome">
+                <small id="nomeHelp" class="form-text text-muted" *ngIf="userForm.controls.nome.invalid && userForm.controls.nome.touched">Cadastrar um nome</small>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="cpfHelp">CPF</label>
+                <input type="text" class="form-control" id="cpfHelp" mask="000.000.000-00" aria-describedby="cpfHelp" name="cpf" placeholder="CPF" formControlName="cpf">
+                <small id="cpfHelp" class="form-text text-muted" *ngIf="userForm.controls.cpf.invalid && userForm.controls.cpf.touched">Cadastrar o cpf</small>
+            </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="emailHelp">Email</label>
+                <input type="email" class="form-control" id="emailHelp" aria-describedby="emailHelp" name="email" placeholder="E-mail" formControlName="email">
+                <small id="emailHelp" class="form-text text-muted" *ngIf="userForm.controls.email.invalid && userForm.controls.email.touched">Cadastrar um email</small>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="phoneHelp">Ramal</label>
+                <input type="tel" class="form-control"  id="ramalHelp" aria-describedby="phoneHelp" name="ramal" placeholder="Ramal" formControlName="ramal">
+                <small id="ramalHelp" class="form-text text-muted" *ngIf="userForm.controls.ramal.invalid && userForm.controls.ramal.touched">Cadastrar um telefone</small>
+            </div>
+            
+        </div>
+       
+       
+        <legend>Departamento</legend>
+        <div class="form-group">
+            <label for="inputAddress">Departamento</label>
+            <input type="text" class="form-control col-md-6" id="inputDepartamento" aria-describedby="inputDepartamento" name="departamento" placeholder="Departamento" formControlName="departamento">
+            <small id="inputDepartamento" class="form-text text-muted" *ngIf="userForm.controls.departamento.invalid && userForm.controls.departamento.touched">Departamento
+				obligatory</small>
+        </div>
+
+
+
+        <div class="text-center">
+            <button type="button" class="btn btn-danger" style="margin: 0px 15px 0px 0px; letter-spacing: 5px" (click)="onBack()">
+				<span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+			</button>
+            <button type="submit" class="btn btn-primary" style="margin: 0px 15px 0px 0px; letter-spacing: 5px" [disabled]="!userForm.valid">
+				<span *ngIf="userId === null">Cadastrar <i class="fa fa-address-book-o" aria-hidden="true"></i> </span>
+				<span *ngIf="userId != null">Atualizar <i class="fa fa-refresh" aria-hidden="true"></i> </span>
+			</button>
+            <button *ngIf="userId != null" type="button" class="btn btn-danger" style="letter-spacing: 5px" (click)="onRemove()" [disabled]="!userForm.valid">
+				<span>Remover <i class="fa fa-trash" aria-hidden="true"></i> </span>
+			</button>
+        </div>
+    </form>
+</div>
