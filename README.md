@@ -10,11 +10,23 @@ ESSE TRABALHO TEM COMO OBJETIVO TREINAR O USO DA FERRAMENTA ANGULA;
 
  PROCEDIMENTOS DE INSTALAÇÃO. 
 
+Baixe o pacote do git
+https://github.com/emersonrf227/AgendaAngular.git
+
  1 - Tenha o NodeJs instalado 
  2 - faça o clone, apos descompacatado.
  3 - Abra o terminal e com o comando CD chegue até o caminho da pasta do projeto 
  4 - Na primeira ultilização npm install 
  5 apos baixar todas as dependência execulte o npm start. 
+
+ acesso externo através do link:
+
+ https://angular-aa844.firebaseapp.com/login 
+ no firebase hosting
+
+
+Link n
+
 
 
  
